@@ -1,0 +1,77 @@
+{% load static %}
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BidiiHos System</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' type='text/css' media='screen' href="{% static 'base/bootstrap.css' %}">
+        <link rel='stylesheet' type='text/css' media='screen' href="{% static 'base/navbar.css' %}">
+        <link rel='stylesheet' type='text/css' media='screen' href="{% static 'base/footer.css' %}">
+        <link rel='stylesheet' type='text/css' media='screen' href="{% static 'Dashboard/dashboard.css' %}">
+        <script src="{% static 'JS/Dashboard/dashboard.js' %}"></script>
+        <!-- <script src="{% static 'JS/index.js' %}"></script> -->
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <h1>BidiiHos System</h1>
+                <nav>
+                    <ul>
+                          <!-- HOME Dropdown -->
+                        <li class="dropdown">
+                            <a href="{% url 'index' %}" class="dropbtn">Home</a>                    
+                        </li>
+                        <!-- Patients Dropdown -->
+                        <li class="dropdown">
+                            <a href="#" class="dropbtn">Patients</a>
+                            <div class="dropdown-content">
+                                <a href="{% url 'patients' %}">Patients</a>
+                                <a href="{% url 'doctors' %}">Doctors</a>
+                                <a href="{% url 'appointments' %}">Appointments</a>
+                                <a href="{% url 'medical_records' %}">Medical Records</a>
+                                <a href="{% url 'departments' %}">Departments</a>
+                                <a href="{% url 'nurses' %}">Nurses</a>
+                                <a href="{% url 'medications' %}">Medications</a>
+                                <a href="{% url 'tests' %}">Tests</a>
+                                <a href="{% url 'test_results' %}">Test Results</a>
+                            </div>
+                        </li>
+                        <!-- Procurement Dropdown -->
+                        <li class="dropdown">
+                            <a href="#" class="dropbtn">Procurement</a>
+                            <div class="dropdown-content">
+                                <a href="{% url 'suppliers' %}">Suppliers</a>
+                                <a href="{% url 'purchase_orders' %}">Purchase Orders</a>
+                                <a href="{% url 'supplies' %}">Supplies</a>
+                                <a href="{% url 'purchase_order_items' %}">Purchase Order Items</a>
+                            </div>
+                        </li>
+                        <!-- Finance Dropdown -->
+                        <li class="dropdown">
+                            <a href="#" class="dropbtn">Finance</a>
+                            <div class="dropdown-content">
+                                <a href="{% url 'payments' %}">Payments</a>
+                                <a href="{% url 'invoices' %}">Invoices</a>
+                                <a href="{% url 'employees' %}">Employees</a>
+                                <a href="{% url 'employee_attendance' %}">Employee Attendance</a>
+                                <a href="{% url 'tax_categories' %}">Tax Categories</a>
+                                <a href="{% url 'invoice_tax' %}">Invoice Tax</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+            </div>
+        </header>
+        <section>
+            {% block content %}
+        
+            {% endblock %}
+        </section>
+        
+    </body>
+    <footer>
+        <p>&copy; 2023 BidiiHos System. All rights reserved.</p>
+    </footer>   
+</html>

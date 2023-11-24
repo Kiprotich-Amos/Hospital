@@ -1,0 +1,23 @@
+{% extends 'Hos/Forms/form.html' %}
+{% block content %}
+<h1> appointments Forms are Still on development </h1>
+<h2> be back Shortly</h2>
+    <div class=" container">
+        <form method="post">
+            {% csrf_token %} 
+            <div class="card">
+                <tr>
+                    <td>
+                        {{appointments_form.as_table}}
+                    </td>
+                </tr>
+            </div>
+            <tr>
+                <td>
+                    <input class="btn btn-primary btn-block mb-4" type="submit" value="submit">
+                </td>
+            </tr>
+        </form>
+    </div>
+    
+{% endblock%}

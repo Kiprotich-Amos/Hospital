@@ -1,0 +1,39 @@
+{% extends 'Hos/Forms/form.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Add your head content here, if needed -->
+</head>
+<body>
+{% block content %}
+    <h1>Departments Form is Still in Development</h1>
+    <h2>We'll be back shortly.</h2>
+
+    <div class="container">
+        <form method="post" action="{% url 'departments' %}">
+            {% csrf_token %}
+            <div class="card">
+                {{ departments_form.as_table }}
+            </div>
+            <div class="card">
+                <input class="btn btn-primary btn-block mb-4" type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+
+    {% if departments_form.errors %}
+        <div class="alert alert-danger">
+            <strong>Error:</strong> Please correct the following errors:
+            <ul>
+                {% for field in departments_form %}
+                    {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+{% endblock %}
+</body>
+</html>

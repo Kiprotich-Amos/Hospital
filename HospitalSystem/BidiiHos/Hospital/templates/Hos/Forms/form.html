@@ -1,0 +1,24 @@
+{% load static %}
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BidiiHos System</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' type='text/css' media='screen' href="{% static 'base/bootstrap.css' %}">
+        <!-- <link rel='stylesheet' type='text/css' media='screen' href="{% static 'Forms/main.css' %}"> -->
+        <link rel='stylesheet' type='text/css' media='screen' href="{% static 'base/footer.css' %}">
+
+        <script src="{% static 'JS/index.js' %}"></script>
+    </head>
+    <body>
+        {% block content %}
+
+        {% endblock %}
+    </body>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 BidiiHos System. All rights reserved.</p>
+        </div>
+    </footer>   
+</html>

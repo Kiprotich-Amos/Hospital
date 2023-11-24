@@ -1,0 +1,31 @@
+{% extends 'Hos/Forms/form.html' %}
+<!DOCTYPE html>
+<body>
+
+{% block content %}    
+    <h1>employee_attendance Form are Still on development </h1>
+    <h2> be back Shortly for styling and improvement</h2>
+    <form method="POST">
+        {% csrf_token %} 
+        <div class="card">
+            <tr>
+                <td>
+                    {{employee_attendance_form.as_table}}
+                </td>
+            </tr>
+        </div>
+        <div class="container">
+            <div class="card">
+                <tr>
+                    <td>
+                        <input class="btn btn-primary btn-block mb-4" type="submit" value="submit">
+                    </td>
+                </tr>
+            </div>
+        </div>
+        
+    </form>
+
+{% endblock %}
+</body>
+</html>

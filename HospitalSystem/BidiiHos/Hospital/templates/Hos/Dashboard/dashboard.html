@@ -1,0 +1,83 @@
+{% extends 'Hos/base.html' %}
+
+{% block content%}
+    <div class= "container">
+
+    
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Patient's  ID" aria-label="Patient's  ID" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <span class="input-group-text btn-block" onclick="Get_Function()" id="basic-addon2">Search</span>
+                </div>
+            </div>
+
+        <section>
+            <div class="row mt-4">
+                <div class="col-md">
+                    <div class="card card-body">
+                        <h5>Patients:</h5>
+                        <hr>
+                        <a class="btn btn-outline-info  btn-sm btn-block" href="#">Update </a>
+                        <hr>
+                        <a class="btn btn-outline-info  btn-sm btn-block" href="#">Select </a>
+
+                    </div>
+                </div>
+
+                <div class="col-md">
+                    <div class="card card-body bg-info">
+                        <h5>Contact Information</h5>
+                        <hr>
+                        <p>Email: </p>
+                        <p>Phone: </p>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="card card-body bg-info">
+                        <h5>Total Patients </h5>
+                            <hr>
+                            <h1 style="text-align: center;padding: 10px">{{place_count}}</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            {% if patients.exists %}
+            <section class="patient">
+                
+                    <h2>Patients Records</h2>
+                    <table>
+                        <tr>
+                            <th>Patients ID</th>
+                            <th>Names</th> 
+                            <th>Gender</th>
+                            <th>Doctors Name</th>
+                            <th>Appointments Date</th>
+                            <th>Appointments Date</th>
+                             <th>Book Appointment</th>
+                         <!-- Add more table headers  here --> -->
+                        </tr>
+                        {% for p in patients %}
+                        <tr>
+                            <td>{{p.PatientID }}</td>
+                            <td>{{ p.FirstName}}</td>
+                            <td>{{ p.Gender }}</td>  <!-- Assuming a doctor field in your patient model -->
+                            <td>{{ p.LastName }}</td>
+                            <td>{{ p.LastName }}</td>
+                            <td>{{ p.LastName }}</td>
+                            <td>
+                                <button>Appointment</button>
+                            </td>
+                            <!-- Add more table data here -->
+                        </tr>
+                        {% endfor %}
+                    </table>
+                        {% else %}
+                           <p>No patients found.</p>
+            </section>
+
+        {% endif %}
+        </section>       
+    </div>
+{% endblock %}

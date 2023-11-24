@@ -1,0 +1,27 @@
+{% extends 'Hos/Forms/form.html' %}
+{% block content%}
+    <div class="container">
+        <div class="container">
+            <form method="post" action="">
+                {% csrf_token %} 
+                <div class="card">
+                    <tr>
+                        <td>
+                            {{doctor_form.as_table}}
+                        </td>
+                    </tr>
+                </div>
+                <div class="container">
+                    <div class="card">
+                        <tr>
+                            <td>
+                                <input class="btn btn-primary btn-block mb-4" type="submit" value="submit">
+                            </td>
+                        </tr>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+{% endblock%}

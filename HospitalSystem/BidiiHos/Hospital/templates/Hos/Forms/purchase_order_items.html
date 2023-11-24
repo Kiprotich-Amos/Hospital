@@ -1,0 +1,13 @@
+{% extends 'Hos/Forms/form.html' %}
+{% block content %}
+<h1> purchase_order_items Forms are Still on development </h1>
+<h2> be back Shortly</h2>
+    <form>
+        {% csrf_token %} 
+        <tr>
+            <td>
+                {{purchase_order_items_form.as_table}}
+            </td>
+        </tr>
+    </form>
+{% endblock%}
