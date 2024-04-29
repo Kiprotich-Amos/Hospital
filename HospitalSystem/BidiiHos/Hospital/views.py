@@ -44,32 +44,16 @@ def dispaly():
 
 
 def index(request):
+    j = False
+    patients = Patients.objects.all()
+    doctors= Doctors.objects.all()
+    p = [patients.count(), doctors.count()]
 
-    try:
-        # Retrieve all patient records from the database
-        patients = Patients.objects.all()
-        p = patients.count()
-        # print(patients)
-        place_count = p 
-
-        # Check if there are any patient records
-        if patients.exists():
-            context = {'patients': patients, 'place_count':place_count}
-            return render(request, 'Hos/Dashboard/dashboard.html', context)
-            
-        else:
-            # If there are no patients, return a message
-            return render(request, 'no_patients.html')  # Create a template for this message
-
-    except Exception as e:
-         # Log the error for debugging
-        logger.error(f"An error occurred in the 'index' view: {str(e)}")
-        # Return a custom error page or message
-        return HttpResponse('Error Loading')
-
+    return render(request, 'Hos/Home/index.html')
 
 def patients(request):
     try:
+        
         if request.method == 'POST':
             patients_form = Patients_Form(request.POST)
             if patients_form.is_valid():
